@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Calculator from "./Calculator/Calculator";
+
 
 function App() {
+  const [input1, setInput1] = useState(0);
+  const [input2, setInput2] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <input type="text" onChange={(event) => setInput1(event.target.value)} />
+      <input type="text" onChange={(event) => setInput2(event.target.value)} />
+
+
+      <Calculator input1={input1} input2={input2} />
     </div>
   );
 }
 
 export default App;
+
+
